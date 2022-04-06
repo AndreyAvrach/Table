@@ -1,0 +1,43 @@
+body{
+    background: lightgray;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+input{
+    position: relative;
+    background-color: lightgreen;
+    border-style: none;
+    margin-left: 40%;
+    width: 20%;
+    height: 15%;
+    transition: 0.5s;
+}
+input:hover{
+    background-color: rgb(76, 231, 76);
+}
+#myTable{
+    position: relative;
+    margin-left: 10%;
+    margin-right: 10%;
+    width:1000px;
+    height:500px;
+}
+.footer {
+    background: gray;
+    color: white;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: 0.5s;
+    text-decoration: none;
+  }
+  .footer:hover{
+    background: rgb(73, 73, 73);
+  }
+  a:visited{
+    color: rgb(250, 249, 249);
+  }
+  a{
+      text-decoration: none;
+  }
