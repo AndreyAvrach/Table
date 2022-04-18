@@ -1,4 +1,4 @@
-var a = [
+let a = [
     {name_eng:"Guinea-Bissau", name_rus:"Гвинея-Биссау", iso_code:"GNB"},
     {name_eng:"Germany", name_rus:"Германия", iso_code:"DEU"},
     {name_eng:"Gibraltar",   name_rus:"Гибралтар", iso_code:"GIB"},
@@ -13,10 +13,10 @@ var a = [
     {name_eng:"Diego Garcia",   name_rus:"Диего-Гарсия", iso_code:"DJE"},                        
 ]
 
-function Insert_Data() {
-  var table = document.getElementById("datas");
+function InsertData() {
+  let table = document.getElementById("datas");
   table.innerHTML="";
-  var tr="";
+  let tr="";
   a.forEach(x=>{
      tr+='<tr>';
      tr+='<td>'+x.name_eng+'</td>'+'<td>'+x.name_rus+'</td>'+'<td>'+x.iso_code+'</td>'
@@ -26,8 +26,24 @@ function Insert_Data() {
   table.innerHTML+=tr;
   
 }
-function Insert_One() {
-  document.getElementById("insert_info").classList.contains("display-none")
-    ? document.getElementById("insert_info").classList.remove("display-none")
-    : document.getElementById("insert_info").classList.add("display-none");
+function InsertOne() {
+  const elem = document.querySelector('.insert_info');
+  elem.classList.contains("display-none")
+    ? elem.classList.remove("display-none")
+    : elem.classList.add("display-none");
 }
+
+document.getElementById("insert_info").addEventListener("add", function (event) {
+  event.preventDefault();
+  
+  let tr = document.createElement("tr");
+  let cols = ["nameRus", "nameEng", "isoCode"];
+  
+  for (let q=0; q<cols.length; ++q) {
+    let td = document.createElement("td");
+    td.textContent = document.getElementById(cols[q]).value;
+    tr.appendChild(td);
+  }
+
+  document.getElementById('datas').appendChild(tr);
+});

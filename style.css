@@ -1,5 +1,5 @@
 body{
-    background: lightgray;
+    background: rgb(255, 253, 253);
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .show{
@@ -57,16 +57,18 @@ body{
     background-color: rgb(76, 231, 76);
 }
 .insert_info{
-    margin-left: 10%;
+    margin-left: 25%;
+    margin-top: 1%;
 }
 input {
   margin: 0;
   border: none;
+  background-color: rgb(240, 238, 238);
   border-radius: 0;
  margin-left: 5%;
   width: 200px;
 }
-.add1{
+.add{
   background:  rgb(76, 231, 76);
   color: #555;
   text-align: center;
@@ -77,34 +79,9 @@ input {
  height: 20px;
  width: 60px;
 }
-.add1:hover{
+.add:hover{
   background-color:lightgreen
 }
-.add2{
-  background: rgb(76, 231, 76);
-  color: #555;
-  text-align: center;
-  cursor: pointer;
-  transition: 0.3s;
-  border: none;
-  border-radius: 0;
-  height: 20px;
-  width: 60px;
-}
-.add2:hover{
-  background-color:lightgreen
-}
-.add3{
-  background:  rgb(76, 231, 76);
-  color: rgb(85, 85, 85);
-  text-align: center;
-  cursor: pointer;
-  transition: 0.3s;
-  border: none;
-  border-radius: 0;
-  height: 20px;
-  width: 60px;
-}
-.add3:hover{
-  background-color:lightgreen
+.display-none {
+  display: none;
 }
