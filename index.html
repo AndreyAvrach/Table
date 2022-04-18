@@ -8,7 +8,20 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <input type="button" onclick="Insert_Data()" value="Show Table" /> 
+    <header></header>
+    <button class="insertNew" onclick="Insert_One()" value="Show Insert">Insert One</button>
+    <button class="show" onclick="Insert_Data()" value="Show Table">Show Table</button>
+    
+    <div id="insert_info" class="insert_info display-none">
+    <input id="nameRus" type="text" id="name_rus" placeholder="Name (Rus)"/>
+    <button class="add1" onclick="Show_Rus()" value="Show Table"><b>ADD</b></button>
+        <input id="nameEng" type="text" id="name_eng" placeholder="Name (Eng)"/>
+        <button class="add2" onclick="Show_Eng()" value="Show Table"><b>ADD</b></button>
+            <input id="isoCode" type="text" id="iso_code" placeholder="ISO code"/>
+            <button class="add3" onclick="Show_Iso()" value="Show Table"><b>ADD</b></button>
+    </div>
+</header>
+<main>
 <table id="myTable">
     <thead>
        <tr>
@@ -21,7 +34,8 @@
 
    </tbody>
 </table>
-<footer class="footer padding-10">
+</main>
+<footer class="footer">
     <p><b><a  href="https://beltelecom.by/private" target="_blank">Beltelecom, 2022</a></b></p>
 </footer>
 </body>

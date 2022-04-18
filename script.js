@@ -26,3 +26,8 @@ function Insert_Data() {
   table.innerHTML+=tr;
   
 }
+function Insert_One() {
+  document.getElementById("insert_info").classList.contains("display-none")
+    ? document.getElementById("insert_info").classList.remove("display-none")
+    : document.getElementById("insert_info").classList.add("display-none");
+}
