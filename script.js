@@ -33,7 +33,7 @@ function InsertOne() {
     : elem.classList.add("display-none");
 }
 
-document.getElementById("insert_info").addEventListener("add", function (event) {
+document.getElementById("insert_info").addEventListener("submit", function (event) {
   event.preventDefault();
   
   let tr = document.createElement("tr");
@@ -44,6 +44,6 @@ document.getElementById("insert_info").addEventListener("add", function (event) 
     td.textContent = document.getElementById(cols[q]).value;
     tr.appendChild(td);
   }
-
-  document.getElementById('datas').appendChild(tr);
+  
+  document.getElementById('datas').prepend(tr);
 });
