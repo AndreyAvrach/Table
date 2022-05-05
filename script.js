@@ -49,6 +49,25 @@ document.getElementById("insert_info").addEventListener("submit", function (even
 });
 document.addEventListener('DOMContentLoaded', () => {
 
+  let ths = document.querySelectorAll('th');
+  const tr = document.querySelectorAll('tbody tr');
+for (let i = 0; i < ths.length; i++) {
+    ths[i].addEventListener('click', function func() {
+        let input = document.createElement('input');
+        input.value = this.innerHTML; 
+        this.innerHTML = '';
+        this.appendChild(input);
+        
+        let th = this;
+        input.addEventListener('blur', function() {
+            th.innerHTML = this.value;
+            th.addEventListener('click', func);
+        });
+        
+        this.removeEventListener('click', func);
+    });
+}
+
   const getSort = ({ target }) => {
       const order = (target.dataset.order = -(target.dataset.order || -1));
       const index = [...target.parentNode.cells].indexOf(target);
@@ -68,21 +87,3 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.table_sort thead').forEach(tableTH => tableTH.addEventListener('click', () => getSort(event)));
   
 });
-let ths = document.querySelectorAll('th');
-
-for (let i = 0; i < tds.length; i++) {
-    ths[i].addEventListener('click', function func() {
-        let input = document.createElement('input');
-        input.value = this.innerHTML;
-        this.innerHTML = '';
-        this.appendChild(input);
-        
-        let th = this;
-        input.addEventListener('blur', function() {
-            th.innerHTML = this.value;
-            th.addEventListener('click', func);
-        });
-        
-        this.removeEventListener('click', func);
-    });
-}
