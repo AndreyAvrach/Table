@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // console.log('tds', tds);
 
-  for (let i = 0; i < ths.length; i++) {
+ for (let i = 0; i < ths.length; i++) {
     ths[i].addEventListener('click', function func() {
       let input = document.createElement('input');
       input.value = this.innerHTML;
@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const getSort = ({ target }) => {
     const order = (target.dataset.order = -(target.dataset.order || -1));
     const index = [...target.parentNode.cells].indexOf(target);
-    const collator = new Intl.Collator(['en', 'ru'], { numeric: true });
+   const collator = new Intl.Collator(['en', 'ru'], { numeric: true });
 
     const comparator = (index, order) => (a, b) => order * collator.compare(
       a.children[index].innerHTML,
